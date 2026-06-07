@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Hospital Tender Fraud Monitoring System
+</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fas fa-shield-alt"></i>
+
+<div>
+
+<h2>PROCUREMENT FRAUD</h2>
+
+<p>Risk Monitoring System</p>
+
+</div>
+
+</div>
+
+<ul>
+
+<li class="active">
+<i class="fas fa-home"></i>
+Overview
+</li>
+
+<li>
+<i class="fas fa-chart-line"></i>
+Dataset Analytics
+</li>
+
+<li>
+<i class="fas fa-database"></i>
+Feature Analysis
+</li>
+
+<li>
+<i class="fas fa-brain"></i>
+SHAP Explainability
+</li>
+
+<li>
+<i class="fas fa-robot"></i>
+Model Performance
+</li>
+
+<li>
+<i class="fas fa-building"></i>
+Business Value
+</li>
+
+<li>
+<i class="fas fa-book"></i>
+Research Overview
+</li>
+
+</ul>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main">
+
+<!-- HEADER -->
+
+<div class="header">
+
+<div>
+
+<h1>
+Hospital Tender Fraud Risk Monitoring System
+</h1>
+
+<p>
+Business Informatics Decision Support Dashboard
+</p>
+
+</div>
+
+<div class="header-right">
+
+<div class="badge">
+Random Forest
+</div>
+
+<div class="user">
+
+<i class="fas fa-user-circle"></i>
+
+Auditor
+
+</div>
+
+</div>
+
+</div>
+
+<!-- KPI ROW -->
+
+<div class="kpi-row">
+
+<div class="card">
+
+<div class="icon blue">
+
+<i class="fas fa-file-alt"></i>
+
+</div>
+
+<div>
+
+<h4>Total Tenders</h4>
+
+<h2 id="totalTenders">
+5092
+</h2>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="icon red">
+
+<i class="fas fa-exclamation-triangle"></i>
+
+</div>
+
+<div>
+
+<h4>Fraud Cases</h4>
+
+<h2 id="fraudCases">
+97
+</h2>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="icon orange">
+
+<i class="fas fa-gauge-high"></i>
+
+</div>
+
+<div>
+
+<h4>Fraud Rate</h4>
+
+<h2 id="fraudRate">
+1.9%
+</h2>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="icon green">
+
+<i class="fas fa-trophy"></i>
+
+</div>
+
+<div>
+
+<h4>Best Model</h4>
+
+<h2>
+Random Forest
+</h2>
+
+<p>
+AUC 0.989
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CHART SECTION -->
+
+<div class="grid-3">
+
+<div class="panel">
+
+<h3>
+Fraud Class Distribution
+</h3>
+
+<canvas id="fraudChart"></canvas>
+
+</div>
+
+<div class="panel">
+
+<h3>
+Top Fraud Drivers (SHAP)
+</h3>
+
+<canvas id="shapChart"></canvas>
+
+</div>
+
+<div class="panel">
+
+<h3>
+Model Performance
+</h3>
+
+<canvas id="modelChart"></canvas>
+
+</div>
+
+</div>
+
+<!-- FEATURE ANALYTICS -->
+
+<div class="grid-2">
+
+<div class="panel">
+
+<h3>
+Skewness Distribution
+</h3>
+
+<canvas id="skewChart"></canvas>
+
+</div>
+
+<div class="panel">
+
+<h3>
+Standard Deviation Distribution
+</h3>
+
+<canvas id="stdChart"></canvas>
+
+</div>
+
+</div>
+
+<div class="grid-2">
+
+<div class="panel">
+
+<h3>
+Mean Distribution
+</h3>
+
+<canvas id="meanChart"></canvas>
+
+</div>
+
+<div class="panel">
+
+<h3>
+Median Distribution
+</h3>
+
+<canvas id="medianChart"></canvas>
+
+</div>
+
+</div>
+
+<!-- MODEL PERFORMANCE -->
+
+<div class="performance-section">
+
+<div class="performance-card">
+
+<h3>
+Random Forest Performance
+</h3>
+
+<div class="metric">
+
+<span>AUC</span>
+
+<span>0.989</span>
+
+</div>
+
+<div class="metric">
+
+<span>Recall</span>
+
+<span>0.984</span>
+
+</div>
+
+<div class="metric">
+
+<span>F1 Score</span>
+
+<span>0.953</span>
+
+</div>
+
+<div class="metric">
+
+<span>Precision</span>
+
+<span>0.924</span>
+
+</div>
+
+</div>
+
+<div class="performance-card">
+
+<h3>
+Why Random Forest?
+</h3>
+
+<ul>
+
+<li>
+Handles non-linear procurement fraud patterns
+</li>
+
+<li>
+Robust against noisy tender data
+</li>
+
+<li>
+Works effectively after SMOTE balancing
+</li>
+
+<li>
+Less prone to overfitting
+</li>
+
+<li>
+Interpretable using SHAP explanations
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- BUSINESS INFORMATICS -->
+
+<div class="business-value">
+
+<h2>
+Business Informatics Value Flow
+</h2>
+
+<div class="flow">
+
+<div class="flow-box">
+Procurement Data
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="flow-box">
+Analytics Engine
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="flow-box">
+Random Forest
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="flow-box">
+SHAP Explainability
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="flow-box">
+Decision Support
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="flow-box">
+Audit Prioritization
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="flow-box value">
+Business Value
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+Machine Learning-Based Fraud Detection in Procurement Systems
+
+<br>
+
+HSE Graduate School of Business
+
+</footer>
+
+</div>
+
+<script src="js/charts.js"></script>
+
+<script src="js/data-loader.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
